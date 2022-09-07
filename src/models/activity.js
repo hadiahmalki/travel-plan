@@ -1,12 +1,13 @@
 class Activity {
-	constructor(name, time, location) {
+	constructor(name, duration, date, location) {
 		this.name = name
-		this.time = time
+		this.duration = duration
+		this.date = date
 		this.location = location
 	}
 }
 
-const ActivitiesName = {
+/* const ActivitiesName = {
 	Name: 'name',
 }
 const ActivitiesTime = {
@@ -14,11 +15,6 @@ const ActivitiesTime = {
 }
 const ActivitiesLocation = {
 	location: 'location',
-}
+} */
 
-module.exports = {
-	Activity,
-	ActivitiesName,
-	ActivitiesTime,
-	ActivitiesLocation,
-}
+module.exports = Activity

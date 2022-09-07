@@ -3,6 +3,8 @@ class TravelPlan {
 
 	activities = []
 
+	comments = []
+
 	packingThings = []
 
 	constructor(name, budget, startDate, endDate, scene, status, departurePoint) {

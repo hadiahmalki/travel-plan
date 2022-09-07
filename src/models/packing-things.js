@@ -1,7 +1,7 @@
-class PackingThings {
+class PackingThing {
 	constructor(name, status) {
 		this.name = name
 		this.status = status
 	}
 }
-module.exports = PackingThings
+module.exports = PackingThing

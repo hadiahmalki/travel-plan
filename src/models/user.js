@@ -1,6 +1,6 @@
-const PackingThings = require('./packing-things')
+const PackingThing = require('./packing-things')
 const TravelPlan = require('./plan')
-/* const Activity = require('./activity') */
+const Activity = require('./activity')
 
 class User {
 	constructor(name, email) {
@@ -15,22 +15,28 @@ class User {
 
 	createPlan(name, budget, startDate, endDate, scene, status, departurePoint, transportation) {
 		const newPlan = new TravelPlan(name, budget, startDate, endDate, scene, status, departurePoint, transportation)
-		this.plan.push(newPlan)
+
+		this.plans.push(newPlan)
+
+		return newPlan
 	}
 
 	addPlan(plan) {
-		plan.registerUser(this)
 		this.plans.push(plan)
 	}
 
-	addPackingThings(plan, name, status) {
-		const packingThings = new PackingThings(name, status, this)
+	savePlan(plan) {
+		plan.savePlan(this)
+		this.plans = this.plans.filter(p => p === plan)
+	}
+
+	addPackingThing(plan, name, status) {
+		const packingThings = new PackingThing(name, status, this)
 		plan.packingThings.push(packingThings)
 	}
 
-	Comment(plan, text) {
-		const comment = new Comment(text, this)
-		plan.comment.push(comment)
+	leaveComment(plan, text) {
+		plan.comments.push(text)
 	}
 }
 module.exports = User

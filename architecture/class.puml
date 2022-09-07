@@ -23,7 +23,7 @@ class TravelPlan {
   startDate: date
   endDate: date
   comment: string
-  recommendation: string
+  recommendation: boolean
   photos: photo[]
   save: boolean 
   saveAsDraft: boolean 
@@ -64,6 +64,6 @@ TravelPlan --> Comment : addComment
 TravelPlan --> Recommendation : addRecommendation
 TravelPlan --> Photo : add, remove
 User --> Comment : add, remove
-User ----> Recommendation
+User ---> Recommendation
 
 @enduml

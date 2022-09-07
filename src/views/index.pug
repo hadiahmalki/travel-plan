@@ -2,4 +2,10 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{Travel planning}
+  p Welcome to New Adventure
+
+  each User in welcome 
+    ul
+      li=User.name
+        
+    
